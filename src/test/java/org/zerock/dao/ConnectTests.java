@@ -16,9 +16,9 @@ public class ConnectTests {
         Class.forName("org.mariadb.jdbc.Driver");
 
         Connection connection = DriverManager.getConnection(
-                "jdbc:mariadb://localhost:3306/webdb",
+                "jdbc:mariadb://localhost:3307/webdb",
                 "webuser",
-                "webuser");
+                "12341234");
 
         Assertions.assertNotNull(connection);
 

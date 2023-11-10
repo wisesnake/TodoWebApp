@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal" created-in="IU-232.10203.10">
-    <data-source name="todoApp_db_connection" uuid="7a52d3b0-4904-4f48-a9db-24bfe90a7f96">
+    <data-source name="webdb@localhost" uuid="f946e4f0-c6d3-44aa-b07c-8569384c59dc">
       <database-info product="MariaDB" version="10.4.31-MariaDB" jdbc-version="4.2" driver-name="MariaDB Connector/J" driver-version="3.0.7" dbms="MARIADB" exact-version="10.4.31" exact-driver-version="3.0">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
-      <secret-storage>master_key</secret-storage>
       <user-name>webuser</user-name>
       <schema-mapping>
         <introspection-scope>
           <node kind="schema" qname="@" />
         </introspection-scope>
       </schema-mapping>
+    </data-source>
+    <data-source name="@localhost" uuid="8fdf07f7-b7ea-4c93-afb1-a4622f011bc3">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MARIADB" exact-version="0" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>webuser</user-name>
+      <schema-mapping />
     </data-source>
   </component>
 </project>
