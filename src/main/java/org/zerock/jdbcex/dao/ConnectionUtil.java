@@ -8,7 +8,7 @@ import java.sql.Connection;
 public enum ConnectionUtil {
     INSTANCE;
 
-    private HikariDataSource ds;
+    private final HikariDataSource ds;
 
     ConnectionUtil(){
         HikariConfig config = new HikariConfig();
