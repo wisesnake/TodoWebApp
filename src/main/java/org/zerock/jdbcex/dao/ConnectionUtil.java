@@ -6,16 +6,17 @@ import com.zaxxer.hikari.HikariDataSource;
 import java.sql.Connection;
 
 public enum ConnectionUtil {
+
     INSTANCE;
 
-    private final HikariDataSource ds;
+    private HikariDataSource ds;
 
-    ConnectionUtil(){
+    ConnectionUtil()  {
         HikariConfig config = new HikariConfig();
         config.setDriverClassName("org.mariadb.jdbc.Driver");
-        config.setJdbcUrl("jdbc:mariadb://localhost:3307/webdb");
+        config.setJdbcUrl("jdbc:mariadb://localhost:3306/webdb");
         config.setUsername("webuser");
-        config.setPassword("12341234");
+        config.setPassword("webuser");
         config.addDataSourceProperty("cachePrepStmts", "true");
         config.addDataSourceProperty("prepStmtCacheSize", "250");
         config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
@@ -23,7 +24,8 @@ public enum ConnectionUtil {
         ds = new HikariDataSource(config);
     }
 
-    public Connection getConnection()throws Exception{
+    public Connection getConnection()throws Exception {
         return ds.getConnection();
     }
+
 }
