@@ -8,7 +8,9 @@
 <body>
 
 <c:if test="${param.result == 'error'}">
-    <h1>로그인 에러</h1>
+    <script>
+        alert("로그인 에러!");
+    </script>
 </c:if>
 
 <form action="/login" method="post">

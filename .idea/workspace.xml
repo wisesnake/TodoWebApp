@@ -4,18 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f291e854-d396-42b7-9ddc-1681360b17fe" name="Changes" comment="-init: 기본 셋팅, Date 작동 테스트">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/zerock/jdbcex/controller/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/login.jsp" afterDir="false" />
+    <list default="true" id="f291e854-d396-42b7-9ddc-1681360b17fe" name="Changes" comment="-feat: register 기능 사용 시 로그인 세션 확인하여 사용가능하도록 하는 기능의 기초적인 틀 작성.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/zerock/jdbcex/controller/LogoutController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/zerock/jdbcex/dao/MemberDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/zerock/jdbcex/domain/MemberVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/zerock/jdbcex/dto/MemberDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/zerock/jdbcex/filter/LoginCheckFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/zerock/jdbcex/filter/UTF8Filter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/zerock/jdbcex/service/MemberService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/jdbcex.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/jdbcex.main.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/jdbcex.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/jdbcex.test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/zerock/jdbcex/controller/TodoRegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/zerock/jdbcex/controller/TodoRegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/zerock/jdbcex/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/zerock/jdbcex/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/zerock/jdbcex/controller/TodoReadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/zerock/jdbcex/controller/TodoReadController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/zerock/jdbcex/dao/ConnectionUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/zerock/jdbcex/dao/ConnectionUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/zerock/dao/ConnectTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/zerock/dao/ConnectTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/todo/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/todo/list.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,8 +53,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -80,28 +87,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mariadb"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mariadb&quot;
     ]
   }
-}]]></component>
-  <component name="RunManager" selected="Gradle.ConnectTests.testConnection">
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.zerock.jdbcex.dto" />
+      <recent name="org.zerock.jdbcex.domain" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.80">
     <configuration name="ConnectTests.test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -339,7 +352,9 @@
       <updated>1699510005200</updated>
       <workItem from="1699510006208" duration="7428000" />
       <workItem from="1699576735041" duration="282000" />
-      <workItem from="1699602962171" duration="1599000" />
+      <workItem from="1699602962171" duration="2680000" />
+      <workItem from="1699612259852" duration="1209000" />
+      <workItem from="1699835159355" duration="12812000" />
     </task>
     <task id="LOCAL-00001" summary="-init: 기본 셋팅, Date 작동 테스트">
       <option name="closed" value="true" />
@@ -349,7 +364,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699576939372</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="-feat: register 기능 사용 시 로그인 세션 확인하여 사용가능하도록 하는 기능의 기초적인 틀 작성.">
+      <option name="closed" value="true" />
+      <created>1699604703642</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1699604703642</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -368,6 +391,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="-init: 기본 셋팅, Date 작동 테스트" />
-    <option name="LAST_COMMIT_MESSAGE" value="-init: 기본 셋팅, Date 작동 테스트" />
+    <MESSAGE value="-feat: register 기능 사용 시 로그인 세션 확인하여 사용가능하도록 하는 기능의 기초적인 틀 작성." />
+    <option name="LAST_COMMIT_MESSAGE" value="-feat: register 기능 사용 시 로그인 세션 확인하여 사용가능하도록 하는 기능의 기초적인 틀 작성." />
   </component>
 </project>

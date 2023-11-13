@@ -18,6 +18,12 @@
         </li>
     </c:forEach>
 </ul>
+<br>
+<form method="post" action="/logout">
+
+    <input type="submit" value="로그아웃" />
+
+</form>
 
 
 </body>

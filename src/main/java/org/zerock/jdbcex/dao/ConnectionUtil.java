@@ -28,4 +28,10 @@ public enum ConnectionUtil {
         return ds.getConnection();
     }
 
+    public void close() {
+        if (ds != null) {
+            ds.close();
+        }
+    }
+
 }
